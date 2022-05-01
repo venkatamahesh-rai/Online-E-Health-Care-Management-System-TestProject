@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-2">
+                <img class="rounded" height="80px" width="100px" [src]="product.imgSrc" />
+            </div>
+            <div class="col-md-10">
+                <h5>{{product.name}}</h5>
+                <h6>{{product.detail}}</h6>
+                <h6>Price: {{product.price}}</h6>
+                <p-button label="Remove" (click)="handleRemoveClick()" icon="pi pi-times-circle"
+                    styleClass="p-button-raised p-button-danger"
+                    [style]="{'margin-left': '.5em', align: 'center', float: 'right'}">
+                </p-button>
+            </div>
+        </div>
+    </div>
+</div>

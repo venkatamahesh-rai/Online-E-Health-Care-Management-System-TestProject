@@ -1,0 +1,26 @@
+<div class="register">
+    <div [style]="{'width': '45rem', 'margin-bottom': '2em'}">
+        <div class="alert alert-danger" role="alert" *ngIf="errors">
+            All fields are required
+        </div>
+        <div class="row">
+            <div class="col-md-6 box">
+                <h5>*First Name</h5>
+                <input type="email" class="form-control" pInputText [(ngModel)]="user.firstName" />
+                <br />
+                <h5>*Last Name</h5>
+                <input type="email" class="form-control" pInputText [(ngModel)]="user.lastName" />
+                <br />
+                <h5>*Email</h5>
+                <input type="email" class="form-control" pInputText [(ngModel)]="user.email" />
+                <br />
+                <h5>*Password</h5>
+                <input type="password" class="form-control" pInputText [(ngModel)]="user.password" />
+                <br />
+                <br />
+                <button type="button" pButton label="Register" style="float: right; margin-left:.25em; float: right"
+                    (click)="handleRegisterClick()"></button>
+            </div>
+        </div>
+    </div>
+</div>

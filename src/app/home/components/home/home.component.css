@@ -1,0 +1,13 @@
+.home{
+    padding: 5%;
+}
+
+img{
+    width: 70%;
+    max-height: 300px;
+    height: 300px;
+}
+
+.p-card-footer{
+    text-align: center !important;
+}

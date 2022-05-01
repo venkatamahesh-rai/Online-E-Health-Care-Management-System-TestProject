@@ -1,0 +1,14 @@
+<div class="home">
+    <div class="row">
+        <select (change)="handleChange($event.target.value)"  name="inputState" class="form-control">
+            <option>Filter</option>
+            <option [value]="option.id"
+            *ngFor="let option of categories">{{option.name}}</option>
+          </select>
+        <ng-container *ngFor="let product of filteredProducts">
+            <div class="col-md-4" style="padding: 2% 3%">
+                <app-product-card [product]="product"></app-product-card>
+            </div>
+        </ng-container>
+    </div>
+</div>

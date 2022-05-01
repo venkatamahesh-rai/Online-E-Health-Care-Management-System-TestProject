@@ -1,0 +1,16 @@
+<nav class="navbar navbar-light bg-light">
+    <span [routerLink]="''" class="header">E-Healthcare</span>
+    <div style="display: flex" *ngIf="user && user.isAdmin">
+        <a class="menu" *ngIf="user" [routerLink]="'/product'" href="javascript:void(0)">Products</a>&nbsp;&nbsp;&nbsp;
+        <a class="menu" *ngIf="user" [routerLink]="'/category'" href="javascript:void(0)">Categories</a>
+    </div>
+    <div style="display: flex; float: right;">
+        <a *ngIf="user" [routerLink]="'/cart'" href="javascript:void(0)"><i class="pi pi-shopping-cart"></i></a>
+        <h6 *ngIf="user">Hello, {{user.firstName}} &nbsp;&nbsp;</h6>
+        <button *ngIf="!user" type="button" (click)="handleSignIn()" pButton label="Sign In" icon="pi pi-user"
+            style="margin-left:.25em"></button>
+        <button *ngIf="user" type="button" (click)="handleSignOut()" pButton label="Logout" icon="pi pi-power-off"
+            style="margin-left:.25em"></button>
+    </div>
+</nav>
+

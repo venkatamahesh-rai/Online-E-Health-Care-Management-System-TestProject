@@ -1,0 +1,12 @@
+<form>
+    <div class="form-row row">
+        <div class="form-group col-md-6">
+            <label for="inputName">Name</label>
+            <input [(ngModel)]="category.name" type="text" class="form-control" name="inputName" placeholder="Name">
+        </div>
+    </div>
+    <br />
+    <button type="submit" (click)="handleSave()" class="btn btn-primary">Save</button>
+</form>
+
+<p-toast></p-toast>

@@ -1,0 +1,28 @@
+<div class="cart">
+    <div class="row" *ngIf="cart && cart.items.length>0">
+        <div class="col-md-8">
+            <ng-container *ngFor="let item of cart.items">
+                <app-cart-item [item]="item"></app-cart-item>
+            </ng-container>
+        </div>
+        <div class="col-md-4">
+            <p-card header="Summary" [style]="{'width': '25rem', 'margin-bottom': '2em', height: '55%'}">
+                <ng-template pTemplate="header">
+                    <hr />
+                </ng-template>
+                <p>Total No. of Items: {{cart.items.length}}</p>
+                <p>Total Amount: {{this.totalAmount}}</p>
+                <hr />
+                <p-button label="Place Order" (click)="placeOrder()" icon="pi pi-check"
+                    styleClass="p-button-raised p-button-warning"
+                    [style]="{'margin-left': '.5em', align: 'center', float: 'right'}">
+                </p-button>
+            </p-card>
+        </div>
+    </div>
+    <ng-container *ngIf="!cart || (cart && cart.items.length==0)">
+        <div class="alert alert-primary" role="alert">
+            No items in Cart. Please add some products to the cart.
+        </div>
+    </ng-container>
+</div>

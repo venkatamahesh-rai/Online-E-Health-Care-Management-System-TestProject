@@ -1,0 +1,25 @@
+<div class="login">
+    <p-card header="Login" [style]="{'width': '45rem', 'margin-bottom': '2em'}">
+        <div class="row">
+            <div class="col-md-6">
+                <img class="rounded" height="270px" width="350px"
+                    src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3040&q=80" />
+            </div>
+            <div class="col-md-6 box">
+                <h5>Email</h5>
+                <input type="email" class="form-control" pInputText [(ngModel)]="username" />
+                <br />
+                <h5>Password</h5>
+                <input type="password" class="form-control" pInputText [(ngModel)]="password" />
+                <br />
+                <button type="button" pButton label="Sign In" icon="pi pi-user" style="margin-left:.25em; float: right"
+                    (click)="handleLoginClick()"></button>
+                <button type="button" pButton label="Register" style="float: right; margin-left:.25em; float: right"
+                    (click)="handleRegisterClick()"></button>
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="invalidCreds">
+                Incorrect Email or Password. Please check and try again.
+            </div>
+        </div>
+    </p-card>
+</div>
